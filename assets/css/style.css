@@ -8,18 +8,36 @@
 } */
 
 body {
-    background-image: url("/assets/images/Background.jpg");
+    background-image: url("../images/dog-cartoon-cute-background.jpg");
     background-color: #cccccc;
 
 }
 
+h1.text {
+
+    text-align: center;
+    position: absolute;
+    margin: -250px 300px;
+    font-weight: bold;
+    background-color: azure;
+    padding: 10px;
+    font-size: 50px;
+
+}
 
 #title {
 
 /* font-family: '04b40'; */
-text-align: center;
-background-color: brown;
-
+/* text-align: center; */
+background-color: aliceblue;
+margin: 70px 100px 70px;
+padding: 300px 120px 310px;
+position: relative;
 
 }
 
+#container {
+
+    background-color: aqua;
+
+}

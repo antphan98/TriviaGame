@@ -61,24 +61,49 @@ $(document).ready(function () {
             gif: "../images/bolt.gif",
 
         }]
+        let intervalId;
 
         const correctAns = 0;
         const wrongAns = 0;
         const noAns = 0;
         const userGuess = "";
-        const time = 20;
+        let time = 20;
+        let timerRun = false;
         
+        // NOTE: hide start button when clicked and start timer and run through questions 
+
         $("#start").on("click", function() {
 
             $(this).hide();
             startTime();
-
+            decrement();
         });
 
+
+
         function startTime() {
-            const timer = $("<h2>");
-            timer.appendTo("#questionArea");
-            timer.html("<h2>" + time + " seconds remaining<h2>");
+
+                if (!timerRun) {
+                    intervalId = setInterval(decrement, 1000);
+                    timerRun = true;
+
+                }
+
+        }
+        // NOTE: make the timer countdown
+        function decrement() {
+
+            // const question = $("<h2>");
+            // const timer = $("<h2>");
+            // timer.appendTo("#questionBox");
+            $("#questionBox").html("<h2>" + time + " seconds remaining<h2>");
+            time--;
+
+            if (time === 0) {
+                noAns++;
+
+
+            }
 
 
         }

@@ -65,7 +65,7 @@ $(document).ready(function () {
 
         const correctAns = 0;
         const wrongAns = 0;
-        const noAns = 0;
+        let noAns = 0;
         const userGuess = "";
         let time = 20;
         let timerRun = false;
@@ -101,10 +101,15 @@ $(document).ready(function () {
 
             if (time === 0) {
                 noAns++;
-
-
+                stopTime();
             }
 
+        }
+
+        //NOTE: function to stop the timer at 0
+        function stopTime() {
+            timerRun = false;
+            clearInterval(intervalId);
 
         }
 

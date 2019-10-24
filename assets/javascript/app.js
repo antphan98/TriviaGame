@@ -69,6 +69,7 @@ $(document).ready(function () {
         const userGuess = "";
         let time = 20;
         let timerRun = false;
+        const currentQuestion = 0;
         
         // NOTE: hide start button when clicked and start timer and run through questions 
 
@@ -77,6 +78,7 @@ $(document).ready(function () {
             $(this).hide();
             startTime();
             decrement();
+            showQuestion();
         });
 
 
@@ -88,8 +90,15 @@ $(document).ready(function () {
                     timerRun = true;
 
                 }
+                // NOTE: create loop to go through questions, create answer buttons
+                
 
-        }
+                    
+
+                }
+
+
+        
         // NOTE: make the timer countdown
         function decrement() {
 
@@ -112,5 +121,18 @@ $(document).ready(function () {
             clearInterval(intervalId);
 
         }
+
+        function showQuestion() {
+
+            choice = questions[index];
+            $("questionBox").html("<h2>" + choice.question + "</h2>");
+            for(let i = 0; i > choice.questions.length; i++) {
+
+
+            }
+
+
+        }
+    
 
 });

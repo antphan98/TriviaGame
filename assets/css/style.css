@@ -17,11 +17,11 @@ h1.text {
 
     text-align: center;
     position: absolute;
-    margin: -250px 300px;
+    margin: -250px 230px;
     font-weight: bold;
     background-color: azure;
-    padding: 10px;
     font-size: 50px;
+    font-family: 'Fredoka One', cursive;
 
 }
 
@@ -36,8 +36,32 @@ position: relative;
 
 }
 
-#container {
+#start {
 
-    background-color: aqua;
+    margin: -350px 580px 200px;
+    position: absolute;
+    width: 250px;
+    font-size: 40px;
+    font-family: 'Fredoka One', cursive;
 
+}
+
+#timerBox {
+    
+    margin: -520px 600px 150px;
+    position: absolute;
+    text-align: center; 
+    font-family: 'Fredoka One', cursive;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#questionBox {
+
+    margin: -450px 420px 200px;
+    position: absolute;
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
 }

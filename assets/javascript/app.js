@@ -63,8 +63,9 @@ $(document).ready(function () {
         }]
         let intervalId;
         let newIndex = 0;
+        let correct;
 
-        const correctAns = 0;
+        let correctAns = 0;
         const wrongAns = 0;
         let noAns = 0;
         let time = 20;
@@ -128,20 +129,23 @@ $(document).ready(function () {
             $("#questionBox").html("<h2>" + q + "</h2>");
             for (let i = 0; i < 4; i++) {
                 
-                // FIXME could not get the answers to show up on screen 
                 const choice = questions[newIndex].choice[i];
                   $("#questionBox").append("<h3 class= allAns id=" + i + ">" + choice + "</h3>");
-                
-                // FIXME tried another solution but did not work
-                // const choices = $("<div>");
-                // choices.html(questions[newIndex].choice[i]);
-                // choices.attr({"data-index": i});
-                // choices.addClass("userChoice");
-                // $("#answers").append(choices);
-
             }
+                  $("h3").click(function () {
+                    const id = $(this).attr("id");
+                    if (id === correct)
+                    timerRun = true;
+                    $("#answers").html("Correct answer: " + questions[newIndex].choice[correct]);
+                    correctAnswer();
 
-        }
+
+                  });
+                
+
+            
+                }
+       
         function noAnswer() {
 
              noAns++;

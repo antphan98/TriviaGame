@@ -66,7 +66,7 @@ $(document).ready(function () {
         let correct;
 
         let correctAns = 0;
-        const wrongAns = 0;
+        let wrongAns = 0;
         let noAns = 0;
         let time = 20;
         let timerRun = false;
@@ -133,11 +133,17 @@ $(document).ready(function () {
                   $("#questionBox").append("<h3 class= allAns id=" + i + ">" + choice + "</h3>");
             }
                   $("h3").click(function () {
-                    const id = $(this).attr("id");
-                    if (id === correct)
+                    const id = $("h3").attr("id");
+                    if (id === correct) {
                     timerRun = true;
-                    $("#answers").html("Correct answer: " + questions[newIndex].choice[correct]);
+                    $("#questionBox").html("Correct answer: " + questions[newIndex].choice[correct]);
                     correctAnswer();
+                    }
+                    else {
+                        timerRun = true;
+                        $("#questionBox").html("The correct answer was " + questions[newIndex].choice[correct]);
+                        wrongAnswer();
+                    }
 
 
                   });

@@ -65,3 +65,9 @@ position: relative;
     overflow: hidden;
     white-space: nowrap;
 }
+
+#answers {
+
+    position: absolute;
+
+}

@@ -67,13 +67,13 @@ $(document).ready(function () {
         const correctAns = 0;
         const wrongAns = 0;
         let noAns = 0;
-        const userGuess = "";
         let time = 20;
         let timerRun = false;
         const currentQuestion = 0;
     
         
         // NOTE: hide start button when clicked and start timer
+
 
         $("#start").on("click", function() {
 
@@ -108,6 +108,7 @@ $(document).ready(function () {
             if (time === 0) {
                 noAns++;
                 stopTime();
+                noAnswer();
             }
 
         }
@@ -117,6 +118,7 @@ $(document).ready(function () {
             timerRun = false;
             clearInterval(intervalId);
 
+
         }
 
         function showQuestion() {
@@ -124,11 +126,13 @@ $(document).ready(function () {
             ans = questions[newIndex].ans;
             const q = questions[newIndex].q;
             $("#questionBox").html("<h2>" + q + "</h2>");
-            for(let i = 0; i < 4; i++) {
+            for (let i = 0; i < 4; i++) {
                 
+                // FIXME could not get the answers to show up on screen 
                 const choice = questions[newIndex].choice[i];
-                $("#answers").append("<h3 class= allAns id=" + i + ">" + choice + "</h3>");
+                  $("#questionBox").append("<h3 class= allAns id=" + i + ">" + choice + "</h3>");
                 
+                // FIXME tried another solution but did not work
                 // const choices = $("<div>");
                 // choices.html(questions[newIndex].choice[i]);
                 // choices.attr({"data-index": i});
@@ -137,8 +141,24 @@ $(document).ready(function () {
 
             }
 
+        }
+        function noAnswer() {
+
+             noAns++;
+            $("#questionBox").html("Time is up!");
 
         }
-    
+
+        function correctAnswer() {
+            correctAns++;
+            $("#questionBox").html("Correct answer!");
+
+        }
+
+        function wrongAnswer() {
+            wrongAns++;
+            $("#questionBox").html("Wrong answer!");
+
+        }
 
 });
